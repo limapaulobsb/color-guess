@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: rgb(150, 150, 150);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.25rem;
+  padding: 20px;
+}
+
+header {
+  background-color: rgb(75, 75, 75);
+  padding: 20px 0;
+  text-align: center;
+}
+
+section {
+  align-items: center;
+  background-color: rgb(240, 240, 240);
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0;
+  padding: 20px 0;
+}
+
+.color-values {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.color-values > div {
+  align-items: center;
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  font-size: 1rem;
+  font-weight: bold;
+  height: 30px;
+  justify-content: center;
+  width: 30px;
+}
+
+.color-values > div:first-of-type {
+  background-color: rgb(210, 60, 60);
+}
+
+.color-values > div:nth-of-type(2) {
+  background-color: rgb(60, 210, 60);
+}
+
+.color-values > div:last-of-type {
+  background-color: rgb(60, 60, 210);
+}
+
+.color-values > span {
+  margin-left: 5px;
+  margin-right: 20px;
+}
+
+.color-values > span:last-child {
+  margin-right: 0;
+}
+
+.color-circles-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 40px 0;
+}
+
+.color-circle {
+  border: 2px dashed black;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 120px;
+  margin: 5px;  
+  width: 120px;
+}
+
+button:not(.color-circle) {
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1.2rem;
+  margin-top: 40px;
+  padding: 10px;
+}
