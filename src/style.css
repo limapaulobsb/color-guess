@@ -6,6 +6,20 @@
   padding: 0;
 }
 
+abbr {
+  align-items: center;
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  font-size: 1rem;
+  font-weight: bold;
+  height: 30px;
+  justify-content: center;
+  margin-right: 5px;
+  text-decoration: none;
+  width: 30px;
+}
+
 body {
   background-image: linear-gradient(to bottom, rgb(210 210 210), rgb(180 180 180));
   color: rgb(30 30 30);
@@ -65,19 +79,6 @@ section {
   margin: 0;
 }
 
-.initial-letter {
-  align-items: center;
-  border-radius: 50%;
-  color: white;
-  display: flex;
-  font-size: 1rem;
-  font-weight: bold;
-  height: 30px;
-  justify-content: center;
-  margin-right: 5px;
-  width: 30px;
-}
-
 .bg-red {
   background-color: rgb(210 60 60);
 }
@@ -97,17 +98,36 @@ section {
   margin: 40px 0;
 }
 
+.color-circles-container > div {
+  margin-bottom: 10px;
+}
+
 .color-circle {
   border: 2px dashed black;
   border-radius: 50%;
   cursor: pointer;
   height: 120px;
-  margin: 5px;
+  margin: 0 5px 10px;
   width: 120px;
 }
 
 .color-circle:disabled:not([correct='true']) {
-  opacity: 0.4;
+  opacity: 0.5;
+}
+
+.color-circle + div {
+  visibility: hidden;
+}
+
+.color-circle:disabled + div {
+  visibility: visible;
+}
+
+.rgb-code,
+.hex-code {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: bold;
 }
 
 .default-button {

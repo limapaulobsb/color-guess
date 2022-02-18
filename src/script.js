@@ -1,11 +1,13 @@
 // ===> Start Global Variables <===
 
-const codeElem = document.getElementById('hex-code');
 const messageElem = document.getElementById('game-message');
+const hexElem = document.getElementById('main-hex');
 const roundElem = document.getElementById('current-round');
 const scoreElem = document.getElementById('current-score');
 const valueElems = document.querySelectorAll('.color-value');
 const circleElems = document.querySelectorAll('.color-circle');
+const rgbCodeElems = document.querySelectorAll('.rgb-code');
+const hexCodeElems = document.querySelectorAll('.hex-code');
 
 let round = 0;
 let score = 5;
@@ -41,8 +43,10 @@ function startRound() {
   const colors = [];
   for (let i = 0; i < circleElems.length; i++) {
     colors.push(randomRgb());
-    const rgbColor = `rgb(${colors[i].red} ${colors[i].green} ${colors[i].blue})`;
-    circleElems[i].style.backgroundColor = rgbColor;
+    const { red, green, blue } = colors[i];
+    circleElems[i].style.backgroundColor = `rgb(${red} ${green} ${blue})`;
+    rgbCodeElems[i].innerText = `R: ${red} G: ${green} B: ${blue}`;
+    hexCodeElems[i].innerText = rgbToHex(red, green, blue);
   }
 
   // Randomly selects a color to guess
@@ -51,7 +55,7 @@ function startRound() {
   valueElems[0].innerText = red;
   valueElems[1].innerText = green;
   valueElems[2].innerText = blue;
-  codeElem.innerText = rgbToHex(red, green, blue);
+  hexElem.innerText = rgbToHex(red, green, blue);
   circleElems[randomIndex].setAttribute('correct', true);
 }
 

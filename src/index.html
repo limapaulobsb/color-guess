@@ -10,7 +10,7 @@
   <body>
     <div class="github-logo-container">
       <a href="https://github.com/limapaulobsb/color-guess" target="_black">
-        <img src="./assets/Octocat.png" alt="Octocat" />
+        <img src="./assets/Octocat.png" alt="Octocat" title="GitHub Page" />
       </a>
     </div>
     <header>
@@ -20,37 +20,69 @@
       <section>
         <div class="color-values-container">
           <div>
-            <span class="initial-letter bg-red">R</span>
+            <abbr class="bg-red" title="Red">R</abbr>
             <span class="color-value"></span>
           </div>
           <div>
-            <span class="initial-letter bg-green">G</span>
+            <abbr class="bg-green" title="Green">G</abbr>
             <span class="color-value"></span>
           </div>
           <div>
-            <span class="initial-letter bg-blue">B</span>
+            <abbr class="bg-blue" title="Blue">B</abbr>
             <span class="color-value"></span>
           </div>
         </div>
-        <div>
-          <span id="hex-code"></span>
-        </div>
+        <span id="main-hex" title="Hexadecimal Code"></span>
       </section>
       <section>
         <p id="game-message"></p>
         <div class="color-circles-container">
-          <button class="color-circle"></button>
-          <button class="color-circle"></button>
-          <button class="color-circle"></button>
-          <button class="color-circle"></button>
-          <button class="color-circle"></button>
-          <button class="color-circle"></button>
+          <div>
+            <button class="color-circle"></button>
+            <div>
+              <span class="rgb-code" title="RGB Code"></span>
+              <span class="hex-code" title="Hexadecimal Code"></span>
+            </div>
+          </div>
+          <div>
+            <button class="color-circle"></button>
+            <div>
+              <span class="rgb-code" title="RGB Code"></span>
+              <span class="hex-code" title="Hexadecimal Code"></span>
+            </div>
+          </div>
+          <div>
+            <button class="color-circle"></button>
+            <div>
+              <span class="rgb-code" title="RGB Code"></span>
+              <span class="hex-code" title="Hexadecimal Code"></span>
+            </div>
+          </div>
+          <div>
+            <button class="color-circle"></button>
+            <div>
+              <span class="rgb-code" title="RGB Code"></span>
+              <span class="hex-code" title="Hexadecimal Code"></span>
+            </div>
+          </div>
+          <div>
+            <button class="color-circle"></button>
+            <div>
+              <span class="rgb-code" title="RGB Code"></span>
+              <span class="hex-code" title="Hexadecimal Code"></span>
+            </div>
+          </div>
+          <div>
+            <button class="color-circle"></button>
+            <div>
+              <span class="rgb-code" title="RGB Code"></span>
+              <span class="hex-code" title="Hexadecimal Code"></span>
+            </div>
+          </div>
         </div>
         <p>Round:&ensp;<span id="current-round"></span></p>
         <p>Score:&ensp;<span id="current-score">5</span></p>
-        <div>
-          <button type="button" class="default-button" id="start-round">New Round</button>
-        </div>
+        <button type="button" class="default-button" id="start-round">New Round</button>
       </section>
     </main>
     <script src="./script.js"></script>
