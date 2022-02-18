@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color Guess</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="github-logo-container">
+      <a href="https://github.com/limapaulobsb/color-guess" target="_black">
+        <img src="./assets/Octocat.png" alt="Octocat" />
+      </a>
+    </div>
+    <header>
+      <h1>Color Guess</h1>
+    </header>
+    <main>
+      <section>
+        <div class="color-values-container">
+          <div>
+            <span class="initial-letter bg-red">R</span>
+            <span class="color-value"></span>
+          </div>
+          <div>
+            <span class="initial-letter bg-green">G</span>
+            <span class="color-value"></span>
+          </div>
+          <div>
+            <span class="initial-letter bg-blue">B</span>
+            <span class="color-value"></span>
+          </div>
+        </div>
+        <div>
+          <span id="hex-code"></span>
+        </div>
+      </section>
+      <section>
+        <p id="game-message"></p>
+        <div class="color-circles-container">
+          <button class="color-circle"></button>
+          <button class="color-circle"></button>
+          <button class="color-circle"></button>
+          <button class="color-circle"></button>
+          <button class="color-circle"></button>
+          <button class="color-circle"></button>
+        </div>
+        <p>Round:&ensp;<span id="current-round"></span></p>
+        <p>Score:&ensp;<span id="current-score">5</span></p>
+        <div>
+          <button type="button" class="default-button" id="start-round">New Round</button>
+        </div>
+      </section>
+    </main>
+    <script src="./script.js"></script>
+  </body>
+</html>

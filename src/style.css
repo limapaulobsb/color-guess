@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: linear-gradient(to bottom, rgb(210 210 210), rgb(180 180 180));
+  color: rgb(30 30 30);
+  font-family: Montserrat, sans-serif;
+  font-size: 1.25rem;
+  min-height: 100vh;
+  padding: 0 5px;
+}
+
+header {
+  padding-top: 100px;
+  text-align: center;
+}
+
+main {
+  margin: 0 auto;
+  width: fit-content;
+}
+
+section {
+  background-color: rgb(240 240 240);
+  border-radius: 2px;
+  box-shadow: 0 0 4px 0 rgba(0 0 0 / 40%);
+  margin-top: 20px;
+  padding: 20px;
+  text-align: center;
+}
+
+.github-logo-container {
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0 0 4px 0 rgba(0 0 0 / 40%);
+  cursor: pointer;
+  left: 20px;
+  padding: 10px;
+  position: fixed;
+  top: 20px;
+}
+
+.github-logo-container img {
+  width: 50px;
+}
+
+.color-values-container {
+  display: flex;
+  margin: 0 auto 20px;
+  width: fit-content;
+}
+
+.color-values-container > div {
+  align-items: center;
+  display: flex;
+  margin-right: 10px;
+}
+
+.color-values-container > div:last-child {
+  margin: 0;
+}
+
+.initial-letter {
+  align-items: center;
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  font-size: 1rem;
+  font-weight: bold;
+  height: 30px;
+  justify-content: center;
+  margin-right: 5px;
+  width: 30px;
+}
+
+.bg-red {
+  background-color: rgb(210 60 60);
+}
+
+.bg-green {
+  background-color: rgb(60 210 60);
+}
+
+.bg-blue {
+  background-color: rgb(60 60 210);
+}
+
+.color-circles-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 40px 0;
+}
+
+.color-circle {
+  border: 2px dashed black;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 120px;
+  margin: 5px;
+  width: 120px;
+}
+
+.color-circle:disabled:not([correct='true']) {
+  opacity: 0.4;
+}
+
+.default-button {
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1.2rem;
+  margin-top: 40px;
+  padding: 10px;
+}
+
+@media screen and (max-width: 374px) {
+  .color-values-container {
+    flex-direction: column;
+  }
+
+  .color-values-container > div {
+    margin: 0 0 5px 0;
+  }
+}
