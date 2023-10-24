@@ -21,7 +21,7 @@ abbr {
 }
 
 body {
-  background-image: linear-gradient(to bottom, rgb(210 210 210), rgb(180 180 180));
+  background: linear-gradient(to bottom, rgb(240 240 240), rgb(210 210 210));
   color: rgb(30 30 30);
   font-family: Montserrat, sans-serif;
   font-size: 1.25rem;
@@ -48,37 +48,6 @@ section {
   text-align: center;
 }
 
-.github-logo-container {
-  background-color: white;
-  border-radius: 50%;
-  box-shadow: 0 0 4px 0 rgba(0 0 0 / 40%);
-  cursor: pointer;
-  left: 20px;
-  padding: 10px;
-  position: fixed;
-  top: 20px;
-}
-
-.github-logo-container img {
-  width: 50px;
-}
-
-.color-values-container {
-  display: flex;
-  margin: 0 auto 20px;
-  width: fit-content;
-}
-
-.color-values-container > div {
-  align-items: center;
-  display: flex;
-  margin-right: 10px;
-}
-
-.color-values-container > div:last-child {
-  margin: 0;
-}
-
 .bg-red {
   background-color: rgb(210 60 60);
 }
@@ -91,15 +60,23 @@ section {
   background-color: rgb(60 60 210);
 }
 
+.color-values-container {
+  display: flex;
+  gap: 10px;
+  margin: 0 auto 20px;
+  width: fit-content;
+}
+
+.color-values-container > div {
+  align-items: center;
+  display: flex;
+}
+
 .color-circles-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 40px 0;
-}
-
-.color-circles-container > div {
-  margin-bottom: 10px;
+  margin: 40px 0 60px;
 }
 
 .color-circle {
@@ -109,6 +86,10 @@ section {
   height: 120px;
   margin: 0 5px 10px;
   width: 120px;
+}
+
+.color-circle:disabled {
+  cursor: unset;
 }
 
 .color-circle:disabled:not([correct='true']) {
@@ -138,12 +119,42 @@ section {
   padding: 10px;
 }
 
+.github-link {
+  align-items: center;
+  aspect-ratio: 1;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0 0 4px 0 rgba(0 0 0 / 20%);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  left: 30px;
+  position: fixed;
+  top: 30px;
+  transition: top 0.25s ease;
+  width: 60px;
+}
+
+.github-link:hover {
+  box-shadow: 0 2px 8px 0 rgba(0 0 0 / 20%);
+  top: 26px;
+}
+
+.github-link > img {
+  opacity: 0.75;
+  width: 50px;
+}
+
+.github-link:hover > img {
+  opacity: 1;
+}
+
 @media screen and (max-width: 374px) {
   .color-values-container {
     flex-direction: column;
   }
 
   .color-values-container > div {
-    margin: 0 0 5px 0;
+    margin: 0 0 5px;
   }
 }

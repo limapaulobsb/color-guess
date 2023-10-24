@@ -1,61 +1,57 @@
-# Projeto Color Guess
+# Project Color Guess
 
-*Data de criação: 11/03/2021*
+[Live demo](https://phlima.com/projects/color-guess)
 
-*Última atualização: fevereiro de 2022*
+Last updated: October 2023
 
-<p align="center"><img width="33%" src="https://raw.githubusercontent.com/limapaulobsb/color-guess/main/Screenshot.png" alt="Project Screenshot" /></p>
+## Context
 
-<p align="center"><a href="http://phlima.com/projects/color-guess" target="_blank" >www.phlima.com/projects/color-guess</a></p>
+Color Guess was proposed as a bonus project for block 5 of the [Trybe](https://www.betrybe.com/) Web Development course. In this block we study fundamental JavaScript concepts such as the DOM ([Document Object Model](https://dom.spec.whatwg.org/)), element manipulation, events and [Web Storage](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API). This is a color guessing game based on RGB and Hexadecimal codes.
 
-## Contexto
-
-Colo Guess foi um dos três projetos bônus do bloco 5 do curso de Desenvolvimento Web da [Trybe](https://www.betrybe.com/). Nele estudamos conceitos fundamentais de JavaScript como o DOM ([Document Object Model](https://dom.spec.whatwg.org/)), manipulação de elementos, eventos e o [Web Storage](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API). Este é um mini jogo de adivinhação de cores baseado em códigos RGB e Hexadecimal.
-
-## Conhecimentos utilizados
+## Stack used
 
 - HTML5
 - CSS3
 - JavaScript (ES6)
 
-Além de aspectos das linguagens, pude aprender muito sobre codificação, conversão e combinação de cores.
+## Running locally
 
-Destaque para alguns métodos e propriedades muito úteis:
-
-[Element.setAttribute()](https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttribute)  
-[Element.getAttribute()](https://developer.mozilla.org/en-US/docs/Web/API/Element/getAttribute)  
-[Element.removeAttribute()](https://developer.mozilla.org/en-US/docs/Web/API/Element/removeAttribute)  
-[Math.random()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random)  
-[Number.prototype.toString()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toString)  
-
-
-## Executando o projeto localmente
-
-1. Clone o repositório
+1. Clone the repository
 
 ```
 git clone git@github.com:limapaulobsb/color-guess.git
 ```
 
-2. Entre na pasta do repositório que você acabou de clonar
+2. Change to the newly created folder
 
 ```
-cd todo-list
+cd color-guess
 ```
 
-3. Instale as dependências
+3. Install dependencies
 
 ```
 npm install
 ```
 
-## Dependências
+## Linters
 
-Desenvolvimento:
+- [ESlint](https://eslint.org/)
 
-- Eslint ([documentação](https://eslint.org/))
-- Stylelint ([documentação](https://stylelint.io/))
+```
+npm run lint
+```
 
-## Entre em contato
+- [Stylelint](https://stylelint.io/)
 
-Qualquer feedback será muito bem vindo. Se desejar, envie dúvidas ou sugestões para limapaulobsb@gmail.com
+```
+npm run lint:style
+```
+
+## Lisence
+
+[MIT](https://choosealicense.com/licenses/mit/)
+
+## Contact
+
+Any feedback will be very welcome. Feel free to send questions or suggestions to limapaulobsb@gmail.com
