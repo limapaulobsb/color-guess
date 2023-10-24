@@ -11,6 +11,7 @@
   "homepage": "https://phlima.com/projects/color-guess",
   "author": "Paulo Henrique Lima <limapaulobsb@gmail.com> (https://phlima.com/)",
   "license": "MIT",
+  "type": "module",
   "scripts": {
     "lint": "npx eslint . --ext .js,.jsx,.ts,.tsx",
     "lint:style": "stylelint '**/*.{css,ts,tsx}'",

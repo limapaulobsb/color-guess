@@ -131,7 +131,7 @@ section {
   left: 30px;
   position: fixed;
   top: 30px;
-  transition: top 0.25s ease;
+  transition: box-shadow 0.25s ease, top 0.25s ease;
   width: 60px;
 }
 

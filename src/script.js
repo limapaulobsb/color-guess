@@ -1,52 +1,34 @@
+import { randomRgb, rgbToHex } from './utils/index.js';
+
 // =====> Start Global Variables <=====
-
-const valueElems = document.querySelectorAll('.color-value');
-const hexElem = document.getElementById('main-hex');
-const messageElem = document.getElementById('game-message');
-const circleElems = document.querySelectorAll('.color-circle');
-const rgbCodeElems = document.querySelectorAll('.rgb-code');
-const hexCodeElems = document.querySelectorAll('.hex-code');
-const roundElem = document.getElementById('current-round');
-const scoreElem = document.getElementById('current-score');
-
 let round = 0;
 let score = 0;
+let colors = [];
+
+const messageElem = document.getElementById('game-message');
+const circleElems = document.querySelectorAll('.color-circle');
 
 // =====> End Global Variables <=====
 // =====> Start Function Declarations <=====
 
-function randomRgb() {
-  const red = Math.floor(Math.random() * 256);
-  const green = Math.floor(Math.random() * 256);
-  const blue = Math.floor(Math.random() * 256);
+function refreshState() {
+  // Prepare a new round
+  const roundElem = document.getElementById('current-round');
+  const scoreElem = document.getElementById('current-score');
 
-  return { red, green, blue };
-}
-
-function rgbToHex(red, green, blue) {
-  const hexRed = red > 16 ? red.toString(16) : `0${red.toString(16)}`;
-  const hexGreen = green > 16 ? green.toString(16) : `0${green.toString(16)}`;
-  const hexBlue = blue > 16 ? blue.toString(16) : `0${blue.toString(16)}`;
-
-  return `#${hexRed}${hexGreen}${hexBlue}`.toUpperCase();
-}
-
-function startRound() {
-  // Refresh state
-  const correctElem = document.querySelector('[correct=true]');
-
-  if (correctElem) {
-    correctElem.removeAttribute('correct');
-  }
-
-  circleElems.forEach((el) => (el.disabled = false));
   round += 1;
   roundElem.innerText = round;
   scoreElem.innerText = score;
   messageElem.innerText = 'Choose the right color!';
+  circleElems.forEach((el) => (el.disabled = false));
+}
 
-  // Generate new colors
-  const colors = [];
+function generateNewColors() {
+  // Randomly generate new colors and render on screen
+  const rgbCodeElems = document.querySelectorAll('.rgb-code');
+  const hexCodeElems = document.querySelectorAll('.hex-code');
+
+  colors = [];
 
   for (let i = 0; i < circleElems.length; i++) {
     colors.push(randomRgb());
@@ -55,8 +37,18 @@ function startRound() {
     rgbCodeElems[i].innerText = `R: ${red} G: ${green} B: ${blue}`;
     hexCodeElems[i].innerText = rgbToHex(red, green, blue);
   }
+}
 
-  // Randomly selects a color to guess
+function selectColor() {
+  // Randomly select a color to guess
+  const correctElem = document.querySelector('[correct=true]');
+  const valueElems = document.querySelectorAll('.color-value');
+  const hexElem = document.getElementById('main-hex');
+
+  if (correctElem) {
+    correctElem.removeAttribute('correct');
+  }
+
   const randomIndex = Math.floor(Math.random() * circleElems.length);
   const { red, green, blue } = colors[randomIndex];
   valueElems[0].innerText = red;
@@ -66,20 +58,26 @@ function startRound() {
   circleElems[randomIndex].setAttribute('correct', true);
 }
 
+function startRound() {
+  refreshState();
+  generateNewColors();
+  selectColor();
+}
+
 function validateAnswer(target) {
   // Answering correctly increases 2 points and each incorrect answer decreases
   // 1 point.
   if (target.getAttribute('correct') === 'true') {
-    circleElems.forEach((el) => (el.disabled = true));
-    messageElem.innerText = 'Correct!';
     score += 2;
+    messageElem.innerText = 'Correct!';
+    circleElems.forEach((el) => (el.disabled = true));
   } else {
-    target.disabled = true;
-    messageElem.innerText = 'Wrong! Try again!';
-
     if (score > 0) {
       score -= 1;
     }
+
+    messageElem.innerText = 'Wrong! Try again!';
+    target.disabled = true;
   }
 }
 
